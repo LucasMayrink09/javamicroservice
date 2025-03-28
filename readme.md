@@ -1,48 +1,53 @@
-Microserviço de Processamento de Pedidos - Desafio Backend BTG Pactual. O objetivo do projeto é construir um microserviço capaz de processar pedidos a partir de uma fila RabbitMQ e disponibilizar uma API REST para consultar o valor total de um pedido, a quantidade de pedidos por cliente e a lista de pedidos realizados por cliente.
+🚀 Microserviço de Processamento de Pedidos - Desafio Backend BTG Pactual
+O objetivo deste projeto é construir um microserviço que processa pedidos a partir de uma fila RabbitMQ e disponibiliza uma API REST para consultar:
 
-Tecnologias Utilizadas
-Java 21
+💵 Valor total de um pedido
 
-Spring Boot
+📊 Quantidade de pedidos por cliente
 
-Spring Data MongoDB
+📝 Lista de pedidos realizados por cliente
 
-RabbitMQ
+🛠 Tecnologias Utilizadas
+Java 21 ☕
 
-Docker
+Spring Boot ⚡
 
-JUnit (para testes unitários)
+Spring Data MongoDB 🗃️
 
-Mockito (para mocks em testes)
+RabbitMQ 📦
 
-Funcionalidades
-O microserviço tem as seguintes funcionalidades:
+Docker 🐋
 
+JUnit (para testes unitários) 🧪
+
+Mockito (para mocks em testes) 🎭
+
+🛠 Funcionalidades
 Consumo de Pedidos: O serviço consome mensagens de uma fila RabbitMQ, processa e salva as informações de pedidos no banco de dados MongoDB.
 
 API REST: A API disponibiliza os seguintes endpoints:
 
-Lista de pedidos realizados por cliente.
+🛒 GET /orders/{customerId}: Lista de pedidos realizados por um cliente.
 
-Valor total de um pedido.
+💰 GET /orders/{customerId}/total: Valor total dos pedidos realizados por um cliente.
 
-Quantidade de pedidos por cliente.
+🔢 GET /orders/{customerId}/count: Quantidade de pedidos realizados por um cliente.
 
-Testes Unitários: Implementação de testes unitários para os componentes principais do projeto utilizando JUnit e Mockito.
+Testes Unitários: Implementação de testes unitários com JUnit e Mockito para garantir a qualidade do código e a confiabilidade do sistema.
 
-Como Rodar o Projeto
+📦 Como Rodar o Projeto
 1. Configuração do Ambiente
-   Certifique-se de ter o Docker instalado para rodar o MongoDB e RabbitMQ em contêineres.
+Certifique-se de ter o Docker instalado para rodar o MongoDB e RabbitMQ em contêineres.
 
 2. Docker Compose
-   Use o arquivo docker-compose.yml para configurar o RabbitMQ e o MongoDB. Rode o comando abaixo para levantar os containers:
+Use o arquivo docker-compose.yml para configurar o RabbitMQ e o MongoDB. Rode o comando abaixo para levantar os containers:
 
 bash
 Copiar
 Editar
 docker-compose up -d
 3. Rodando o Projeto
-   Clone o repositório:
+Clone o repositório:
 
 bash
 Copiar
@@ -57,25 +62,25 @@ Editar
 ./mvnw spring-boot:run
 O projeto estará rodando em http://localhost:8080.
 
-4. Testando a API
-   Utilize ferramentas como Postman ou curl para testar os endpoints disponíveis na API.
+🧪 Testando a API
+Utilize ferramentas como Postman ou curl para testar os endpoints disponíveis na API.
 
 Endpoints disponíveis:
-GET /orders/{customerId}: Retorna a lista de pedidos realizados por um cliente.
+🛒 GET /orders/{customerId}: Retorna a lista de pedidos realizados por um cliente.
 
-GET /orders/{customerId}/total: Retorna o valor total dos pedidos realizados por um cliente.
+💰 GET /orders/{customerId}/total: Retorna o valor total dos pedidos realizados por um cliente.
 
-GET /orders/{customerId}/count: Retorna a quantidade de pedidos realizados por um cliente.
+🔢 GET /orders/{customerId}/count: Retorna a quantidade de pedidos realizados por um cliente.
 
-5. Testes Unitários
-   Os testes unitários estão implementados com JUnit e Mockito. Para rodá-los, basta usar o seguinte comando:
+4. Testes Unitários
+Os testes unitários estão implementados com JUnit e Mockito. Para rodá-los, basta usar o seguinte comando:
 
 bash
 Copiar
 Editar
 ./mvnw test
-Estrutura do Projeto
-OrderController: Responsável por expor os endpoints da API REST.
+🗂️ Estrutura do Projeto
+OrderController: Controlador responsável por expor os endpoints da API REST.
 
 OrderService: Lógica de negócios relacionada ao processamento de pedidos.
 
@@ -89,7 +94,7 @@ OrderItem: Entidade que representa um item dentro de um pedido.
 
 Docker: Arquivos de configuração para rodar o RabbitMQ e MongoDB em containers.
 
-Arquivos Importantes
+📑 Arquivos Importantes
 docker-compose.yml: Configuração do Docker para MongoDB e RabbitMQ.
 
 application.properties: Configurações do Spring Boot, como a URL do banco MongoDB e RabbitMQ.
@@ -102,7 +107,7 @@ OrderRepository.java: Repositório de MongoDB.
 
 OrderCreatedListener.java: Listener para consumir mensagens do RabbitMQ.
 
-Contribuindo
+🤝 Contribuindo
 Faça um fork do repositório.
 
 Crie uma branch para a sua feature: git checkout -b minha-feature.
@@ -113,5 +118,5 @@ Envie para o seu repositório forkado: git push origin minha-feature.
 
 Crie um Pull Request para o repositório original.
 
-Licença
-Este projeto está licenciado sob a licença MIT - consulte o arquivo LICENSE para mais detalhes.
+📝 Licença
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
